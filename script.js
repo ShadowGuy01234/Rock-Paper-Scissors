@@ -88,3 +88,4 @@ function playGame() {
 
 
 playGame();
+alert("Done");
