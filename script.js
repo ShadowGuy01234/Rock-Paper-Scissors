@@ -47,7 +47,6 @@ function playGame() {
         if (human_choice == undefined) {
             continue outer;
         }
-        console.log(human_choice);
             let computer_choice = getComputerChoice();
             alert(`Computer: ${computer_choice}`)
             if (human_choice == "rock" && computer_choice == "paper") {
