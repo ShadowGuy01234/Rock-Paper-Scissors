@@ -42,8 +42,12 @@ function playGame() {
     let human = 0;
     let computer = 0;
     let round = parseInt(prompt("How many rounds you wanna play?"))
-    for (let i = 0; i < round; i++) {
+    outer: for (let i = 0; i < round; i++) {
         let human_choice = getHumanChoice();
+        if (human_choice == undefined) {
+            continue outer;
+        }
+        console.log(human_choice);
             let computer_choice = getComputerChoice();
             alert(`Computer: ${computer_choice}`)
             if (human_choice == "rock" && computer_choice == "paper") {
