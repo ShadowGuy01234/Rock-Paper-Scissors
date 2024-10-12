@@ -1,0 +1,40 @@
+/* body{
+    background-image: url('5172658.jpg');
+} */
+
+.rock, .paper, .scissors {
+    background-color: aqua;
+    border-radius: 30px;
+    padding: 10px;
+    font-weight: 800;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 20%;
+    margin-left: 5%;
+    flex-wrap: wrap;
+}
+
+.options {
+    display: flex;
+    gap: 32px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 600;
+}
+
+.choice {
+    font-size: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+}
