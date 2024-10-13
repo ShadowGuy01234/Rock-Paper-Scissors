@@ -1,41 +1,52 @@
 // function to get the computer
 
 function getComputerChoice() {
-    let r = "rock";
-    let p = "paper";
-    let s = "scissors";
+    let r = document.querySelector(".rock");
+    let p = document.querySelector(".paper");
+    let s = document.querySelector(".scissors");
+    let choice = document.querySelector(".computerChoice");
     let random = parseInt(Math.floor(Math.random() * 3));
     if (random === 0) {
-        return r;
+        choice.textContent = 'ROCK';
     }
     else if (random === 1) {
-        return p;
+        choice.textContent = 'PAPER';
     }
     else {
-        return s;
+        choice.textContent = 'SCISSORS';
     }
 }
+
+document.addEventListener("DOMContentLoaded", getComputerChoice);
 // function to get human choice
 
 function getHumanChoice() {
-    let r = "rock";
-    let p = "paper";
-    let s = "scissors";
-    let choice = prompt(`Choose: \nRock \nPaper \nScissors`);
-    if (choice.toUpperCase() === "ROCK") {
-        return r;
-    }
-    else if (choice.toUpperCase() === "PAPER") {
-        return p;
-    }
-    else if (choice.toUpperCase() === "SCISSORS") {
-        return s;
-    }
-    else {
-        alert("Invalid choice");
-    }
+    let humanChoice = '';
+    let choice = document.querySelector(".humanChoice");
+    let r = document.querySelector(".rock");
+    let p = document.querySelector(".paper");
+    let s = document.querySelector(".scissors");
+
+    r.addEventListener("click", () => {
+        humanChoice = 'rock';
+        choice.textContent = 'ROCK';
+    });
+
+    p.addEventListener("click", () => {
+        humanChoice = 'paper';
+        choice.textContent = 'PAPER';
+    });
+
+    s.addEventListener("click", () => {
+        humanChoice = 'scissors';
+        choice.textContent = 'SCISSORS';
+    });
 }
 
+document.addEventListener("DOMContentLoaded", getHumanChoice);
+
+    
+    
 // the main function to play the game
 
 function playGame() {
