@@ -1,6 +1,10 @@
-/* body{
-    background-image: url('5172658.jpg');
-} */
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url('7409866_3632097.jpg');
+    margin: 0px;
+    padding: 0px;
+} 
 
 .rock, .paper, .scissors {
     background-color: aqua;
@@ -13,9 +17,10 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin-top: 20%;
+    margin-top: 15%;
     margin-left: 5%;
     flex-wrap: wrap;
+    margin-bottom: 75px;
 }
 
 .options {
@@ -28,6 +33,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 6em;
     font-size: large;
     font-weight: 600;
 }
@@ -37,4 +43,27 @@
     display: flex;
     justify-content: space-between;
     margin-right: 5%;
+}
+
+.result {
+    font-family: sans-serif;
+    font-size: 60px;
+}
+
+.scoreInside, .computerScore, .humanScore {
+    font-size: 30px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color:#1f2937;
+    color: #e5e6eb;
+    padding: 10px;
+    font-size: 20px;    
+}
+
+a {
+    text-decoration: none;
+    color:#e5e6eb;
 }
