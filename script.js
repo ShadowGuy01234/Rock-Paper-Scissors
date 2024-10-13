@@ -67,6 +67,7 @@ function playGame() {
     
     setTimeout(() => {
         if (humanChoice == "rock" && computerChoice == "paper") {
+            // TODO: UPDATE THE ALERT TO CHANGE THE SCORES AND OUTPUT IT ON THE PAGE
             alert("You lost!");
                 computer++;
             }
@@ -94,6 +95,8 @@ function playGame() {
                 alert("draw");
             }
     }, 50) 
+
+    // TODO: CHANGE WINING PARAMETER TO REACH 5 POINTS FIRST
 
     // if (human > computer) {
     //     alert("Congratulations You Won!");
