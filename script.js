@@ -8,38 +8,46 @@ function getComputerChoice() {
     let random = parseInt(Math.floor(Math.random() * 3));
     if (random === 0) {
         choice.textContent = 'ROCK';
+        return 'rock';
     }
     else if (random === 1) {
         choice.textContent = 'PAPER';
+        return 'paper';
     }
     else {
         choice.textContent = 'SCISSORS';
+        return 'scissors';
     }
 }
 
-document.addEventListener("DOMContentLoaded", getComputerChoice);
+// document.addEventListener("DOMContentLoaded", getComputerChoice);
 // function to get human choice
 
 function getHumanChoice() {
-    let humanChoice = '';
+    let choiceComputer = document.querySelector(".computerChoice");
+    choiceComputer.textContent = '  ‍';
     let choice = document.querySelector(".humanChoice");
+    choice.textContent = '';
     let r = document.querySelector(".rock");
     let p = document.querySelector(".paper");
     let s = document.querySelector(".scissors");
 
     r.addEventListener("click", () => {
-        humanChoice = 'rock';
         choice.textContent = 'ROCK';
+        getComputerChoice();
+        return 'rock';
     });
 
     p.addEventListener("click", () => {
-        humanChoice = 'paper';
         choice.textContent = 'PAPER';
+        getComputerChoice();
+        return 'paper';
     });
 
     s.addEventListener("click", () => {
-        humanChoice = 'scissors';
         choice.textContent = 'SCISSORS';
+        getComputerChoice();
+        return 'scissors';
     });
 }
 
@@ -52,13 +60,8 @@ document.addEventListener("DOMContentLoaded", getHumanChoice);
 function playGame() {
     let human = 0;
     let computer = 0;
-    let round = parseInt(prompt("How many rounds you wanna play?"))
-    outer: for (let i = 0; i < round; i++) {
-        let human_choice = getHumanChoice();
-        if (human_choice == undefined) {
-            continue outer;
-        }
-            let computer_choice = getComputerChoice();
+    let human_choice = getHumanChoice();
+    // let computer_choice = getComputerChoice();
             alert(`Computer: ${computer_choice}`)
             if (human_choice == "rock" && computer_choice == "paper") {
             alert("You lost!");
@@ -98,7 +101,6 @@ function playGame() {
         else {
             alert("Its a draw!");
         } 
-}
 
 
 // playGame();
