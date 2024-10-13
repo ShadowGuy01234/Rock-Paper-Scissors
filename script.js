@@ -1,22 +1,22 @@
 // function to get the computer
 
+let humanChoice = '';
+let computerChoice = '';
+
 function getComputerChoice() {
-    let r = document.querySelector(".rock");
-    let p = document.querySelector(".paper");
-    let s = document.querySelector(".scissors");
     let choice = document.querySelector(".computerChoice");
     let random = parseInt(Math.floor(Math.random() * 3));
     if (random === 0) {
         choice.textContent = 'ROCK';
-        return 'rock';
+        computerChoice = 'rock';
     }
     else if (random === 1) {
         choice.textContent = 'PAPER';
-        return 'paper';
+        computerChoice = 'paper';
     }
     else {
         choice.textContent = 'SCISSORS';
-        return 'scissors';
+        computerChoice = 'scissors';
     }
 }
 
@@ -25,8 +25,8 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let choiceComputer = document.querySelector(".computerChoice");
-    choiceComputer.textContent = '  ‍';
     let choice = document.querySelector(".humanChoice");
+    choiceComputer.textContent = '  ‍';
     choice.textContent = '';
     let r = document.querySelector(".rock");
     let p = document.querySelector(".paper");
@@ -34,73 +34,76 @@ function getHumanChoice() {
 
     r.addEventListener("click", () => {
         choice.textContent = 'ROCK';
-        getComputerChoice();
-        return 'rock';
+        humanChoice = 'rock';
+        playGame();
     });
 
     p.addEventListener("click", () => {
         choice.textContent = 'PAPER';
-        getComputerChoice();
-        return 'paper';
+        humanChoice = 'paper';
+        playGame();
     });
 
     s.addEventListener("click", () => {
         choice.textContent = 'SCISSORS';
-        getComputerChoice();
-        return 'scissors';
+        humanChoice = 'scissors';
+        playGame();
     });
 }
 
-document.addEventListener("DOMContentLoaded", getHumanChoice);
+// document.addEventListener("DOMContentLoaded", getHumanChoice);
+
+
 
     
     
 // the main function to play the game
 
+let human = 0;
+let computer = 0;
+
 function playGame() {
-    let human = 0;
-    let computer = 0;
-    let human_choice = getHumanChoice();
-    // let computer_choice = getComputerChoice();
-            alert(`Computer: ${computer_choice}`)
-            if (human_choice == "rock" && computer_choice == "paper") {
+    getComputerChoice();
+    
+    setTimeout(() => {
+        if (humanChoice == "rock" && computerChoice == "paper") {
             alert("You lost!");
                 computer++;
             }
-            else if (human_choice == "paper" && computer_choice == "rock") {
+            else if (humanChoice == "paper" && computerChoice == "rock") {
                 alert("You Won!");
                 human++;
             }
-            else if (human_choice == "rock" && computer_choice == "scissors") {
+            else if (humanChoice == "rock" && computerChoice == "scissors") {
                 alert("You Won!");
                 human++;
             }
-            else if (human_choice == "scissors" && computer_choice == "rock") {
+            else if (humanChoice == "scissors" && computerChoice == "rock") {
                 alert("You Lost!");
                 computer++;
             }
-            else if (human_choice == "scissors" && computer_choice == "paper") {
+            else if (humanChoice == "scissors" && computerChoice == "paper") {
                 alert("You Won!");
                 human++;
             }
-            else if (human_choice == "paper" && computer_choice == "scissors") {
+            else if (humanChoice == "paper" && computerChoice == "scissors") {
                 alert("You lost!");
                 computer++;
             }
             else {
                 alert("draw");
             }
-            alert(`Scores: \nYou: ${human}\nComputer: ${computer}`);
-        }
-        if (human > computer) {
-            alert("Congratulations You Won!");
-        }
-        else if (computer > human) {
-            alert("You lost! \nBetter Luck next time");
-        }
-        else {
-            alert("Its a draw!");
-        } 
+    }, 50) 
 
+    // if (human > computer) {
+    //     alert("Congratulations You Won!");
+    // }
+    // else if (computer > human) {
+    //     alert("You lost! \nBetter Luck next time");
+    // }
+    // else {
+    //     alert("Its a draw!");
+    // } 
+    }
 
-// playGame();
+document.addEventListener("DOMContentLoaded", getHumanChoice);
