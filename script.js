@@ -2,6 +2,12 @@
 
 let humanChoice = '';
 let computerChoice = '';
+let reset;
+document.addEventListener("DOMContentLoaded", () => {
+    reset = document.querySelector(".reset");
+    getHumanChoice();
+});
+
 
 function getComputerChoice() {
     let choice = document.querySelector(".computerChoice");
@@ -112,13 +118,24 @@ function playGame() {
             let result = document.querySelector(".result");
             result.textContent = "DRAW!";
             }
-    }, 50) 
 
+            if(human == 5 || computer == 5) {
+                endGame();
+            }
+    }, 50) 
+    }
     // TODO: CHANGE WINING PARAMETER TO REACH 5 POINTS FIRST
 
-    if (human == 5 || computer == 5){
-        alert
-    }
-    }
+    function endGame() {
+        let winner;
+        if (human == 5) {
+            winner = 'HUMAN';
+        }
+        else{
+            winner = 'COMPUTER';
+        }
+        reset.style.display = 'block';
+        reset.innerText = `${winner} Won! PLay Again`;
 
-document.addEventListener("DOMContentLoaded", getHumanChoice);
+        reset.addEventListener("click", () => location.reload());
+    }
