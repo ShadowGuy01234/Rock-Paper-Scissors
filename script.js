@@ -67,35 +67,46 @@ function playGame() {
     
     setTimeout(() => {
         if (humanChoice == "rock" && computerChoice == "paper") {
-            // TODO: UPDATE THE ALERT TO CHANGE THE SCORES AND OUTPUT IT ON THE PAGE
+            let score = document.querySelector(".computerScore");
             let result = document.querySelector(".result");
             result.textContent = "COMPUTER WON!";
                 computer++;
+                score.textContent = computer;
             }
             else if (humanChoice == "paper" && computerChoice == "rock") {
+            let score = document.querySelector(".humanScore");
             let result = document.querySelector(".result");
             result.textContent = "HUMAN WON!";
                 human++;
+                score.textContent = human;
             }
             else if (humanChoice == "rock" && computerChoice == "scissors") {
+            let score = document.querySelector(".humanScore");
             let result = document.querySelector(".result");
             result.textContent = "HUMAN WON!";
                 human++;
+                score.textContent = human;
             }
             else if (humanChoice == "scissors" && computerChoice == "rock") {
+            let score = document.querySelector(".computerScore");
             let result = document.querySelector(".result");
             result.textContent = "COMPUTER WON!";
                 computer++;
+                score.textContent = computer;
             }
             else if (humanChoice == "scissors" && computerChoice == "paper") {
+            let score = document.querySelector(".humanScore");
             let result = document.querySelector(".result");
             result.textContent = "HUMAN WON!";
                 human++;
+                score.textContent = human;
             }
             else if (humanChoice == "paper" && computerChoice == "scissors") {
+            let score = document.querySelector(".computerScore");
             let result = document.querySelector(".result");
             result.textContent = "COMPUTER WON!";
                 computer++;
+                score.textContent = computer;
             }
             else {
             let result = document.querySelector(".result");
@@ -105,15 +116,9 @@ function playGame() {
 
     // TODO: CHANGE WINING PARAMETER TO REACH 5 POINTS FIRST
 
-    // if (human > computer) {
-    //     alert("Congratulations You Won!");
-    // }
-    // else if (computer > human) {
-    //     alert("You lost! \nBetter Luck next time");
-    // }
-    // else {
-    //     alert("Its a draw!");
-    // } 
+    if (human == 5 || computer == 5){
+        alert
+    }
     }
 
 document.addEventListener("DOMContentLoaded", getHumanChoice);
