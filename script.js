@@ -68,31 +68,38 @@ function playGame() {
     setTimeout(() => {
         if (humanChoice == "rock" && computerChoice == "paper") {
             // TODO: UPDATE THE ALERT TO CHANGE THE SCORES AND OUTPUT IT ON THE PAGE
-            alert("You lost!");
+            let result = document.querySelector(".result");
+            result.textContent = "COMPUTER WON!";
                 computer++;
             }
             else if (humanChoice == "paper" && computerChoice == "rock") {
-                alert("You Won!");
+            let result = document.querySelector(".result");
+            result.textContent = "HUMAN WON!";
                 human++;
             }
             else if (humanChoice == "rock" && computerChoice == "scissors") {
-                alert("You Won!");
+            let result = document.querySelector(".result");
+            result.textContent = "HUMAN WON!";
                 human++;
             }
             else if (humanChoice == "scissors" && computerChoice == "rock") {
-                alert("You Lost!");
+            let result = document.querySelector(".result");
+            result.textContent = "COMPUTER WON!";
                 computer++;
             }
             else if (humanChoice == "scissors" && computerChoice == "paper") {
-                alert("You Won!");
+            let result = document.querySelector(".result");
+            result.textContent = "HUMAN WON!";
                 human++;
             }
             else if (humanChoice == "paper" && computerChoice == "scissors") {
-                alert("You lost!");
+            let result = document.querySelector(".result");
+            result.textContent = "COMPUTER WON!";
                 computer++;
             }
             else {
-                alert("draw");
+            let result = document.querySelector(".result");
+            result.textContent = "DRAW!";
             }
     }, 50) 
 
