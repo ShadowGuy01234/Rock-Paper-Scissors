@@ -26,7 +26,6 @@ function getComputerChoice() {
     }
 }
 
-// document.addEventListener("DOMContentLoaded", getComputerChoice);
 // function to get human choice
 
 function getHumanChoice() {
@@ -57,7 +56,6 @@ function getHumanChoice() {
     });
 }
 
-// document.addEventListener("DOMContentLoaded", getHumanChoice);
 
 
 
@@ -124,7 +122,6 @@ function playGame() {
             }
     }, 50) 
     }
-    // TODO: CHANGE WINING PARAMETER TO REACH 5 POINTS FIRST
 
     function endGame() {
         let winner;
