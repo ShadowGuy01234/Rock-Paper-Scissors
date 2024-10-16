@@ -132,7 +132,7 @@ function playGame() {
             winner = 'COMPUTER';
         }
         reset.style.display = 'block';
-        reset.innerText = `${winner} Won! PLay Again`;
+        reset.innerText = `${winner} Won! Play Again`;
 
         reset.addEventListener("click", () => location.reload());
     }
